@@ -22,3 +22,6 @@
 </nav>
 
  <a href="/card-registration"><input class="btn btn-success mt-3" type="submit" value="Add Card Fraud"></a>
+ <a href="#"><input class="btn btn-success mt-3" type="submit" value="View Card Fraud"></a>
+ <a href="#"><input class="btn btn-success mt-3" type="submit" value="Update Card Fraud"></a>
+ <a href="#"><input class="btn btn-success mt-3" type="submit" value="Delete Card Fraud"></a>

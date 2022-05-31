@@ -47,4 +47,32 @@
 			</c:forEach>
 		</tbody>
 	</table>
-    <h1 class="text-center">${emptyList}</h1>
+    <h1 class="text-center">${emptyList1}</h1>
+
+	<div class="container">
+	
+		<table class="table caption-top table-striped">
+			<caption>Pending Requests of User For Approval are</caption>
+			<thead>
+				<tr>
+					<td>Personnel ID</td>
+					<td>First Name</td>
+					<td>Last Name</td>
+					<td>Action</td>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${unApprovedPersonnel}" var="personnel">
+					<tr>
+						<td>${personnel.userId}</td>
+						<td>${personnel.firstName}</td>
+						<td>${personnel.lastName}</td>
+						<td><a href="/approve-personnel?id=${personnel.id}" type="button"
+							class="btn btn-success">Approve</a></td>
+						<td><a href="/reject-personnel?id=${personnel.id}" type="button"
+							class="btn btn-warning">Reject</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+		<h1 class="text-center">${emptyList2}</h1>

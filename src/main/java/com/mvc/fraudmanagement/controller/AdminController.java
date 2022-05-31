@@ -54,10 +54,10 @@ public class AdminController {
 	@RequestMapping(value = "/pending-requests", method = RequestMethod.GET)
 	public String showPendingRegistrationRequestsPage(ModelMap model) {
 		
-//		List<Personnel> unApprovedOfficer = personnelService.getUnApprovedPersonnel();
+		List<Personnel> unApprovedPersonnel = personnelService.getUnApprovedPersonnel();
 		List<User> unApprovedUser = userService.getUnApprovedUser();
 		
-//		model.put("unApprovedPersonnel", unApprovedPersonnel);
+		model.put("unApprovedPersonnel", unApprovedPersonnel);
 		model.put("unApprovedUser", unApprovedUser);
 		
 		return "pages/pending-registration-request";
@@ -69,7 +69,7 @@ public class AdminController {
 		List<User> unApprovedUser = userService.getUnApprovedUser();
 		
 		if(unApprovedUser.size()==0) {
-			model.put("emptyList", "Currently No Requests to Show");
+			model.put("emptyList1", "Currently No Requests to Show");
 		}
 		else	
 			model.put("unApprovedUser", unApprovedUser);
@@ -81,6 +81,27 @@ public class AdminController {
 		userService.rejectUser(id);
 		List<User> unApprovedUser = userService.getUnApprovedUser();
 		model.put("unApprovedUser", unApprovedUser);
+		return "pages/pending-registration-request";
+	}
+	
+	@RequestMapping(value = "/approve-personnel", method = RequestMethod.GET)
+	public String approvePersonnelRegistrationRequest(ModelMap model, @RequestParam int id) {
+		personnelService.approvePersonnel(id);
+		List<Personnel> unApprovedPersonnel = personnelService.getUnApprovedPersonnel();
+		
+		if(unApprovedPersonnel.size()==0) {
+			model.put("emptyList2", "Currently No Requests to Show");
+		}
+		else	
+			model.put("unApprovedPersonnel", unApprovedPersonnel);
+		return "pages/pending-registration-request";
+	}
+	
+	@RequestMapping(value = "/reject-personnel", method = RequestMethod.GET)
+	public String rejectPersonnelRegistrationRequest(ModelMap model, @RequestParam int id) {
+		personnelService.rejectPersonnel(id);
+		List<Personnel> unApprovedPersonnel = personnelService.getUnApprovedPersonnel();
+		model.put("unApprovedPersonnel", unApprovedPersonnel);
 		return "pages/pending-registration-request";
 	}
 	

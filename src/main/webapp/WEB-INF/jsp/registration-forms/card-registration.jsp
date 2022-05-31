@@ -1,6 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ include file="../common/header.jspf"%>
+
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<div class="container-fluid">
@@ -24,80 +26,80 @@
 	</div>
 </nav>
 
-            <h1 class="text-center">Register Card Fraud Complaint</h1>
-            <div class="container">
-                <form:form method="post" modelAttribute="card">
-                    <fieldset class="form-group">
-                        <form:label path="cardNo">Enter Card Number</form:label>
-                        <form:input class="form-control" type="Number" path="cardNo" placeholder="Card Number" autofocus="true" required="true" />
-                        <form:errors path="cardNo" cssClass="text-warning" />
-                    </fieldset>
+<h1 class="text-center">Register Card Fraud Complaint</h1>
+<div class="container">
+<form:form method="post" modelAttribute="card">
+    <fieldset class="form-group">
+        <form:label path="cardNo">Enter Card Number</form:label>
+        <form:input class="form-control" type="Number" path="cardNo" placeholder="Card Number" autofocus="true" required="true" />
+        <form:errors path="cardNo" cssClass="text-warning" />
+    </fieldset>
 
-                    <fieldset class="form-group">
-                        <form:label path="cardHolderName">Enter Card Holder Name</form:label>
-                        <form:input class="form-control" type="text" path="cardHolderName" placeholder="Card Holder Name" required="true" />
-                        <form:errors path="cardHolderName" cssClass="text-warning" />
-                    </fieldset>
+    <fieldset class="form-group">
+        <form:label path="cardHolderName">Enter Card Holder Name</form:label>
+        <form:input class="form-control" type="text" path="cardHolderName" placeholder="Card Holder Name" required="true" />
+        <form:errors path="cardHolderName" cssClass="text-warning" />
+    </fieldset>
 
-                    <fieldset class="form-group">
-                        <form:label path="accNo">Enter Account Number</form:label>
-                        <form:input path="accNo" type="Number" class="form-control" placeholder="Account Number" required="required" />
-                        <form:errors path="accNo" cssClass="text-warning" />
-                    </fieldset>
+    <fieldset class="form-group">
+        <form:label path="accNo">Enter Account Number</form:label>
+        <form:input path="accNo" type="Number" class="form-control" placeholder="Account Number" required="required" />
+        <form:errors path="accNo" cssClass="text-warning" />
+    </fieldset>
 
-                    <fieldset class="form-group ">
-                        <form:label path="expiryDate">Enter Expiry Date</form:label>
-                        <form:input class="form-control " type="text" path="expiryDate" placeholder="Expiry Date" required="true " />
-                        <form:errors path="expiryDate" cssClass="text-warning " />
-                    </fieldset>
+    <fieldset class="form-group ">
+        <form:label path="expiryDate">Enter Expiry Date</form:label>
+        <form:input class="form-control " type="text" path="expiryDate" placeholder="Expiry Date" required="true " />
+        <form:errors path="expiryDate" cssClass="text-warning " />
+    </fieldset>
 
-                    <fieldset class=" form-group ">
-                        <form:label path="cardType">Card Type</form:label>
-                        <form:select path="cardType" cssClass="form-select ">
-                            <option value="">Select Your Card Type</option>
-                            <option value="Credit">Credit Card</option>
-                            <option value="Debit">Debit Card</option>
-                        </form:select>
-                        <form:errors path="cardType" cssClass="text-warning " />
-                    </fieldset>
+    <fieldset class=" form-group ">
+        <form:label path="cardType">Card Type</form:label>
+        <form:select path="cardType" cssClass="form-select ">
+            <option value="">Select Your Card Type</option>
+            <option value="Credit">Credit Card</option>
+            <option value="Debit">Debit Card</option>
+        </form:select>
+        <form:errors path="cardType" cssClass="text-warning " />
+    </fieldset>
 
-                    <fieldset class="form-group">
-                        <form:label path="transDate">Select Transaction Date</form:label>
-                        <form:input path="transDate" type="text" class="form-control" placeholder="Transaction Date" required="required" />
-                        <form:errors path="transDate" cssClass="text-warning" />
-                    </fieldset>
+    <fieldset class="form-group">
+        <form:label path="transDate">Select Transaction Date</form:label>
+        <form:input path="transDate" type="text" class="form-control" placeholder="Transaction Date" required="required" />
+        <form:errors path="transDate" cssClass="text-warning" />
+    </fieldset>
 
-                    <fieldset class="form-group">
-                        <form:label path="transDetails">Enter Transaction Details</form:label>
-                        <form:input class="form-control" type="text " path="transDetails" placeholder="Transaction Details" required="true" />
-                        <form:errors path="transDetails" cssClass="text-warning" />
-                    </fieldset>
+    <fieldset class="form-group">
+        <form:label path="transDetails">Enter Transaction Details</form:label>
+        <form:input class="form-control" type="text " path="transDetails" placeholder="Transaction Details" required="true" />
+        <form:errors path="transDetails" cssClass="text-warning" />
+    </fieldset>
 
-                    <fieldset class="form-group">
-                        <form:label path="remarks">Enter Remarks</form:label>
-                        <form:input class="form-control" type="text " path="remarks" placeholder="Remarks" required="true" />
-                        <form:errors path="remarks" cssClass="text-warning" />
-                    </fieldset>
+    <fieldset class="form-group">
+        <form:label path="remarks">Enter Remarks</form:label>
+        <form:input class="form-control" type="text " path="remarks" placeholder="Remarks" required="true" />
+        <form:errors path="remarks" cssClass="text-warning" />
+    </fieldset>
 
-                    <fieldset class=" form-group ">
-                        <form:label path="fraudLevel">Fraud Level</form:label>
-                        <form:select path="fraudLevel" cssClass="form-select ">
-                            <option value=" ">Select Level</option>
-                            <option value="Low">Low</option>
-                            <option value="Medium">Medium</option>
-                            <option value="High">High</option>
-                        </form:select>
-                        <form:errors path="cardType" cssClass="text-warning " />
-                    </fieldset>
+    <fieldset class=" form-group ">
+        <form:label path="fraudLevel">Fraud Level</form:label>
+        <form:select path="fraudLevel" cssClass="form-select ">
+            <option value=" ">Select Level</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </form:select>
+        <form:errors path="cardType" cssClass="text-warning " />
+    </fieldset>
 
-                    <fieldset class=" form-group ">
-                        <form:label path="blocked">Card Status</form:label>
-                        <form:select path="blocked" cssClass="form-select ">
-                            <option value=" ">Select Card Status</option>
-                            <option value="${1}">UnBlocked</option>
-                            <option value="${0}">Blocked</option>
-                        </form:select>
-                        <form:errors path="cardType" cssClass="text-warning " />
-                    </fieldset>
-                    <button class="btn btn-success " type="submit ">Submit</button>
-                </form:form>
+    <fieldset class=" form-group ">
+        <form:label path="blocked">Card Status</form:label>
+        <form:select path="blocked" cssClass="form-select ">
+            <option value=" ">Select Card Status</option>
+            <option value="${1}">UnBlocked</option>
+            <option value="${0}">Blocked</option>
+        </form:select>
+        <form:errors path="cardType" cssClass="text-warning " />
+    </fieldset>
+    <button class="btn btn-success mt-3 " type="submit ">Submit</button>
+</form:form>

@@ -52,13 +52,13 @@ private PersonnelRepository personnelRepository;
 //	
 	@RequestMapping(value = "/personnel-login", method = RequestMethod.POST)
 	public String logInUser(ModelMap model,@RequestParam String userId ,@RequestParam String password){
-		personnelService.getAllUser();
+		personnelService.getAllPersonnel();
 		boolean isValidUser=personnelService.isValidLogin(userId,password);
 		if(!isValidUser) {
 			model.put("errorMessage","Invalid User Credentials");
 		 return "login-forms/personnel-login";
 		}
-		Personnel personnel=personnelService.getUserById(userId);
+		Personnel personnel=personnelService.getPersonnelById(userId);
 		if(personnel.getIsAuthorized()==0) {
 			model.put("errorMessage", "Your Registration Request is Rejected by Admin");
 			return "login-forms/personnel-login";

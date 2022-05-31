@@ -1,6 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ include file="../common/header.jspf"%>
+
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<div class="container-fluid">
@@ -82,7 +84,7 @@
 				placeholder="Create Your Password" required="true" />
 			<form:errors path="password" cssClass="text-warning" />
 		</fieldset>
-		<button class="btn btn-success" type="submit">Submit</button>
+		<button class="btn btn-success mt-3" type="submit">Submit</button>
 	</form:form>
 	<div>
 		Already have an account? <a href="/user-registration">Click here</a> to

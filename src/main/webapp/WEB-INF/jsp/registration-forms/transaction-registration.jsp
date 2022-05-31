@@ -87,5 +87,14 @@
                         <form:errors path="cardType" cssClass="text-warning " />
                     </fieldset>
 
+                    <fieldset class=" form-group ">
+                        <form:label path="blocked">Card Status</form:label>
+                        <form:select path="blocked" cssClass="form-select ">
+                            <option value=" ">Select Card Status</option>
+                            <option value="${1}">UnBlocked</option>
+                            <option value="${0}">Blocked</option>
+                        </form:select>
+                        <form:errors path="cardType" cssClass="text-warning " />
+                    </fieldset>
                     <button class="btn btn-success " type="submit ">Submit</button>
                 </form:form>

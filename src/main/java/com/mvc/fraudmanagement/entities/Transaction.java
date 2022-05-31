@@ -53,6 +53,9 @@ public class Transaction {
     @Size(min = 1, message = "Choose the Fraud Level")
     private String fraudLevel;
 
+    @Column(name = "Blocked", nullable = false)
+    private int blocked;
+
     @Column(nullable = true)
     private int isAuthorized = 1;
 
@@ -141,6 +144,14 @@ public class Transaction {
         this.fraudLevel = fraudLevel;
     }
 
+    public int getBlocked() {
+        return blocked;
+    }
+
+    public void setBlocked(int blocked) {
+        this.blocked = blocked;
+    }
+
     public int getIsAuthorized() {
         return isAuthorized;
     }
@@ -154,7 +165,8 @@ public class Transaction {
         return "Transaction [id=" + id + ", cardNo=" + cardNo + ", cardHolderName=" + cardHolderName
                 + ", accNo = " + accNo + ", expiryDate=" + expiryDate + ", cardType=" + cardType
                 + ", transDate=" + transDate + ", transDetails=" + transDetails + ", remarks=" + remarks
-                + ", fraudLevel=" + fraudLevel + ", isAuthorized=" + isAuthorized + "]";
+                + ", fraudLevel=" + fraudLevel + ", blocked=" + blocked + ",isAuthorized="
+                + isAuthorized + "]";
     }
 
 }
